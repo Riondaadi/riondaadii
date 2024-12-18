@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .form-container {
+            width: 500px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .form-container h2 {
+            text-align: left;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .form-group label {
+            width: 150px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group input[type="date"],
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .form-group select#tipeKamar {
+            width: 200px; /* Sesuaikan lebar dropdown */
+            font-size: 14px; /* Perkecil ukuran font */
+        }
+        .form-group input[type="checkbox"] {
+            transform: scale(1.2);
+        }
+        .form-group.inline {
+            display: flex;
+            align-items: center;
+        }
+        .form-group.inline label {
+            width: auto;
+            margin: 0;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .button-group button {
+            width: 100px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+        .btn-simpan {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .btn-batal {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Form Pemesanan</h2>
+    <form action="#">
+        <div class="form-group">
+            <label for="idPemesanan">Id Pemesan:</label>
+            <input type="text" id="idPemesanan" name="idPemesanan" value="1" readonly>
+        </div>
+        <div class="form-group">
+            <label for="namaPemesanan">Nama Pemesan:</label>
+            <input type="text" id="namaPemesanan" name="namaPemesanan" required>
+        </div>
+        <div class="form-group">
+            <label for="noIdentitas">Nomor Identitas:</label>
+            <input type="text" id="noIdentitas" name="noIdentitas" required>
+        </div>
+        <div class="form-group">
+            <label for="tipeKamar">Tipe Kamar:</label>
+            <select id="tipeKamar" name="tipeKamar" required>
+                <option value="">- Pilih -</option>
+                <option value="standar">Standar</option>
+                <option value="deluxe">Deluxe</option>
+                <option value="family">Family</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="harga">Harga:</label>
+            <input type="text" id="harga" name="harga" readonly>
+        </div>
+        <div class="form-group">
+            <label for="tanggalPesan">Tanggal Pesan:</label>
+            <input type="date" id="tanggalPesan" name="tanggalPesan" required>
+        </div>
+        <div class="form-group inline">
+            <label for="durasi">Durasi Menginap:</label>
+            <input type="number" id="durasi" name="durasi" style="width: 60px;" required>
+            <label>Hari</label>
+        </div>
+        <div class="form-group inline">
+            <input type="checkbox" id="breakfast" name="breakfast">
+            <label for="breakfast">Termasuk Breakfast</label>
+        </div>
+        <div class="form-group">
+            <label for="totalBayar">Total Bayar:</label>
+            <input type="text" id="totalBayar" name="totalBayar" readonly>
+        </div>
+        <div class="button-group">
+            <button type="submit" class="btn-simpan">Simpan</button>
+            <button type="reset" class="btn-batal">Batal</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

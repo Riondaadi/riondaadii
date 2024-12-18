@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tambah Data Fasilitas</title>
+</head>
+<body>
+    <h2>Form Tambah Data Fasilitas</h2>
+    <form action="submit_fasilitas.php" method="post">
+        <label for="id_fasilitas">ID Fasilitas:</label><br>
+        <input type="text" id="id_fasilitas" name="id_fasilitas" required><br><br>
+
+        <label for="nama_fasilitas">Nama Fasilitas:</label><br>
+        <input type="text" id="nama_fasilitas" name="nama_fasilitas" required><br><br>
+
+        <label for="harga_weekend">Harga Weekend:</label><br>
+        <input type="number" id="harga_weekend" name="harga_weekend" required><br><br>
+
+        <label for="harga_weekday">Harga Weekday:</label><br>
+        <input type="number" id="harga_weekday" name="harga_weekday" required><br><br>
+
+        <label for="kuota">Kuota:</label><br>
+        <input type="number" id="kuota" name="kuota" required><br><br>
+
+        <label for="jam_buka">Jam Buka:</label><br>
+        <input type="time" id="jam_buka" name="jam_buka" required><br><br>
+
+        <label for="jam_tutup">Jam Tutup:</label><br>
+        <input type="time" id="jam_tutup" name="jam_tutup" required><br><br>
+
+        <button type="submit" style="background-color: rgb(56, 240, 90);">Simpan</button>
+        <button type="reset" style="background-color: yellow;">Batal</button>
+    </form>
+</body>
+</html>

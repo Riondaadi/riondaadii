@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Tambah Data Kamar</title>
+    <script>
+        function validateForm() {
+            const namaPemesan = document.getElementById("namaPemesan").value.trim();
+            const tipeKamar = document.getElementById("tipeKamar").value;
+            const nomorKamar = document.getElementById("nomorKamar").value.trim();
+            const fasilitas = document.querySelectorAll('input[name="fasilitas"]:checked');
+            const hargaKamar = document.getElementById("hargaKamar").value.trim();
+            const tanggalPesan = document.getElementById("tanggalPesan").value;
+
+            // Validasi Nama Pemesan
+            if (namaPemesan === "") {
+                alert("Nama pemesan tidak boleh kosong.");
+                return false;
+            }
+
+            // Validasi Tipe Kamar
+            if (tipeKamar === "") {
+                alert("Tipe kamar harus dipilih.");
+                return false;
+            }
+
+            // Validasi Nomor Kamar
+            if (nomorKamar === "") {
+                alert("Nomor kamar tidak boleh kosong.");
+                return false;
+            }
+
+            // Validasi Fasilitas
+            if (fasilitas.length === 0) {
+                alert("Minimal satu fasilitas harus dipilih.");
+                return false;
+            }
+
+            // Validasi Harga Kamar
+            if (hargaKamar === "" || isNaN(hargaKamar) || hargaKamar <= 0) {
+                alert("Harga kamar harus berupa angka positif.");
+                return false;
+            }
+
+            // Validasi Tanggal Pesan
+            if (tanggalPesan === "") {
+                alert("Tanggal pesan harus diisi.");
+                return false;
+            }
+
+            // Jika validasi berhasil
+            const fasilitasTerpilih = Array.from(fasilitas).map(f => f.value).join(", ");
+            alert(
+                "Data kamar berhasil disimpan!\n" +
+                "Nama Pemesan: " + namaPemesan + "\n" +
+                "Tipe Kamar: " + tipeKamar + "\n" +
+                "Nomor Kamar: " + nomorKamar + "\n" +
+                "Fasilitas Kamar: " + fasilitasTerpilih + "\n" +
+                "Harga Kamar: Rp " + parseFloat(hargaKamar).toLocaleString() + "\n" +
+                "Tanggal Pesan: " + tanggalPesan
+            );
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Form Tambah Data Kamar</h2>
+    <form onsubmit="return validateForm();">
+        <!-- Input Nama Pemesan -->
+        <label for="namaPemesan">Nama Pemesan:</label>
+        <input type="text" id="namaPemesan" placeholder="Masukkan nama pemesan" required><br><br>
+
+        <!-- Pilih Tipe Kamar -->
+        <label for="tipeKamar">Tipe Kamar:</label>
+        <select id="tipeKamar" required>
+            <option value="">-- Pilih Tipe Kamar --</option>
+            <option value="Single">Single</option>
+            <option value="Double">Double</option>
+            <option value="Suite">Suite</option>
+            <option value="Family">Family</option>
+        </select><br><br>
+
+        <!-- Input Nomor Kamar -->
+        <label for="nomorKamar">Nomor Kamar:</label>
+        <input type="text" id="nomorKamar" placeholder="Masukkan nomor kamar" required><br><br>
+
+        <!-- Pilih Fasilitas -->
+        <label>Fasilitas Kamar:</label><br>
+        <input type="checkbox" name="fasilitas" value="AC"> AC<br>
+        <input type="checkbox" name="fasilitas" value="WiFi"> WiFi<br>
+        <input type="checkbox" name="fasilitas" value="TV"> TV<br>
+        <input type="checkbox" name="fasilitas" value="Kulkas"> Kulkas<br>
+        <input type="checkbox" name="fasilitas" value="Sarapan"> Sarapan<br><br>
+
+        <!-- Input Harga Kamar -->
+        <label for="hargaKamar">Harga Kamar (Rp):</label>
+        <input type="number" id="hargaKamar" placeholder="Masukkan harga kamar" min="1" required><br><br>
+
+        <!-- Input Tanggal Pesan -->
+        <label for="tanggalPesan">Tanggal Pesan:</label>
+        <input type="date" id="tanggalPesan" required><br><br>
+
+        <!-- Tombol Submit -->
+        <button type="submit">Tambah Data</button>
+    </form>
+</body>
+</html>

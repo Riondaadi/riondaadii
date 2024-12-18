@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tambah Data Kamar</title>
+</head>
+<body>
+    <h2>Form Tambah Data Kamar</h2>
+    <form action="submit_kamar.php" method="post" enctype="multipart/form-data">
+        <label for="id_kamar">ID Kamar:</label><br>
+        <input type="text" id="id_kamar" name="id_kamar" required><br><br>
+
+        <label for="gambar_ruangan">Gambar Ruangan:</label><br>
+        <input type="file" id="gambar_ruangan" name="gambar_ruangan" accept="image/*" required><br><br>
+
+        <label for="jenis_kamar">Jenis Kamar:</label><br>
+        <input type="text" id="jenis_kamar" name="jenis_kamar" required><br><br>
+
+        <label for="harga">Harga:</label><br>
+        <input type="number" id="harga" name="harga" required><br><br>
+
+        <label for="fasilitas">Fasilitas:</label><br>
+        <textarea id="fasilitas" name="fasilitas" rows="4" required></textarea><br><br>
+
+        <button type="submit" style="background-color: rgb(56, 240, 90);">Simpan</button>
+        <button type="reset" style="background-color: yellow;">Batal</button>
+    </form>
+</body>
+</html>
